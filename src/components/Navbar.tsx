@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,10 @@ export const Navbar = () => {
             <a href="#how-it-works" className="text-convivio-text hover:text-convivio-accent transition-colors">
               How it Works
             </a>
-            <Button className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors">
+            <Button 
+              className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
+              onClick={() => navigate("/join")}
+            >
               Join Now <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

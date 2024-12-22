@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-convivio-bg pt-16">
       <div className="container mx-auto px-4">
@@ -14,7 +17,10 @@ export const Hero = () => {
             <p className="text-lg text-convivio-muted max-w-lg">
               Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
             </p>
-            <Button className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors">
+            <Button 
+              className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
+              onClick={() => navigate("/join")}
+            >
               Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
