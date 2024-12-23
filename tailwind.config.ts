@@ -21,10 +21,10 @@ export default {
     extend: {
       colors: {
         convivio: {
-          bg: "#FFFFFF",
-          text: "#1A1A1A",
-          accent: "#FF6B6B",
-          muted: "#666666"
+          bg: "#f4f2e5",
+          text: "#3d615a",
+          accent: "#e6a95f",
+          muted: "#8a817c"
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -66,8 +66,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        serif: ["var(--font-serif)", ...fontFamily.serif],
+        sans: ["Cardo", ...fontFamily.sans],
+        serif: ["Cardo", ...fontFamily.serif],
       },
       keyframes: {
         "accordion-down": {
