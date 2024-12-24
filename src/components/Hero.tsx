@@ -1,9 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Languages, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 
 export const Hero = () => {
   const navigate = useNavigate();
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+
+  const handleLanguageSelect = (language: string) => {
+    setShowLanguageModal(false);
+    navigate(`/form/${language}`);
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-convivio-bg pt-16">
@@ -19,7 +32,7 @@ export const Hero = () => {
             </p>
             <Button 
               className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
-              onClick={() => navigate("/join")}
+              onClick={() => setShowLanguageModal(true)}
             >
               Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -33,6 +46,43 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={showLanguageModal} onOpenChange={setShowLanguageModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center font-serif text-2xl text-convivio-text">
+              Choose Your Language
+            </DialogTitle>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <Button
+              variant="outline"
+              className="group h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300"
+              onClick={() => handleLanguageSelect("fr")}
+            >
+              Français
+              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Button>
+            <Button
+              variant="outline"
+              className="group h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300"
+              onClick={() => handleLanguageSelect("en")}
+            >
+              English
+              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Button>
+            <Button
+              variant="outline"
+              className="group h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300 flex items-center gap-2"
+              onClick={() => handleLanguageSelect("both")}
+            >
+              <Languages className="h-5 w-5" />
+              I'm bilingual, I can go either way!
+              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
