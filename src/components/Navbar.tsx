@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Languages, Sparkles } from "lucide-react";
+import { ArrowRight, Languages, Menu, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -8,6 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,10 +42,9 @@ export const Navbar = () => {
             <a href="#" className="text-2xl font-serif text-convivio-text">
               Convivio
             </a>
+
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#concept" className="text-convivio-text hover:text-convivio-accent transition-colors">
-                Concept
-              </a>
               <a href="#how-it-works" className="text-convivio-text hover:text-convivio-accent transition-colors">
                 How it Works
               </a>
@@ -55,6 +55,28 @@ export const Navbar = () => {
                 Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
+
+            {/* Mobile Menu */}
+            <Sheet>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6 text-convivio-text" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <div className="flex flex-col space-y-4 mt-8">
+                  <a href="#how-it-works" className="text-convivio-text hover:text-convivio-accent transition-colors text-lg">
+                    How it Works
+                  </a>
+                  <Button 
+                    className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors w-full"
+                    onClick={() => setShowLanguageModal(true)}
+                  >
+                    Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>

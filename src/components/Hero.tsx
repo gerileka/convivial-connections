@@ -22,12 +22,12 @@ export const Hero = () => {
     <section className="min-h-screen flex items-center justify-center bg-convivio-bg pt-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-fadeIn text-center md:text-left">
             <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-convivio-text leading-tight">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-convivio-text leading-tight">
               Connect Over Curated Dining Experiences
             </h1>
-            <p className="text-lg text-convivio-muted max-w-lg">
+            <p className="text-lg text-convivio-muted max-w-lg mx-auto md:mx-0">
               Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
             </p>
             <Button 
@@ -37,7 +37,7 @@ export const Hero = () => {
               Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
-          <div className="relative h-[500px] animate-fadeIn">
+          <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0">
             <img
               src="/lovable-uploads/0e961c5a-8778-4551-8fe0-2c4ca39e765f.png"
               alt="Convivio Dining Experience"
