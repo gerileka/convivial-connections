@@ -52,7 +52,7 @@ export const Navbar = () => {
                 className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
                 onClick={() => setShowLanguageModal(true)}
               >
-                Join Now <ArrowRight className="ml-2 h-4 w-4" />
+                Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>

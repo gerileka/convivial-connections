@@ -4,32 +4,12 @@ export const Footer = () => {
   return (
     <footer className="bg-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h3 className="text-2xl font-serif text-convivio-text">Convivio</h3>
             <p className="text-convivio-muted">
               Connecting people through curated dining experiences.
             </p>
-          </div>
-          <div>
-            <h4 className="font-bold text-convivio-text mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#concept" className="text-convivio-muted hover:text-convivio-accent transition-colors">
-                  Our Concept
-                </a>
-              </li>
-              <li>
-                <a href="#how-it-works" className="text-convivio-muted hover:text-convivio-accent transition-colors">
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a href="#join" className="text-convivio-muted hover:text-convivio-accent transition-colors">
-                  Join Now
-                </a>
-              </li>
-            </ul>
           </div>
           <div>
             <h4 className="font-bold text-convivio-text mb-4">Contact</h4>
