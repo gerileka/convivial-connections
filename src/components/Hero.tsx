@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Languages, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -38,11 +39,13 @@ export const Hero = () => {
             </Button>
           </div>
           <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0">
-            <img
-              src="/lovable-uploads/0e961c5a-8778-4551-8fe0-2c4ca39e765f.png"
-              alt="Convivio Dining Experience"
-              className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
-            />
+            <div className="absolute inset-0 overflow-hidden rounded-lg border border-convivio-accent/20">
+              <img
+                src="/lovable-uploads/0e961c5a-8778-4551-8fe0-2c4ca39e765f.png"
+                alt="Convivio Dining Experience"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
