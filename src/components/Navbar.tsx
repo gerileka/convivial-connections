@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { ArrowRight, Languages, Menu, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -39,7 +41,7 @@ export const Navbar = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <a href="#" className="text-2xl font-serif text-convivio-text">
+            <a href="/" className="text-2xl font-serif text-convivio-text">
               Convivio
             </a>
 
@@ -87,6 +89,9 @@ export const Navbar = () => {
             <DialogTitle className="text-center font-serif text-2xl text-convivio-text">
               Choose Your Language
             </DialogTitle>
+            <DialogDescription className="text-center text-convivio-text/80">
+              Select your preferred language for the application form.
+            </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <Button

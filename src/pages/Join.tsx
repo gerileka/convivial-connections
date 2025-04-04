@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -60,7 +61,7 @@ const Join = () => {
               </Button>
 
               <Button
-                onClick={() => handleLanguageSelect("en")}
+                onClick={() => handleLanguageSelect("both")}
                 variant="outline"
                 className="group h-14 border-2 border-convivio-text/20 hover:border-convivio-text bg-white/50 hover:bg-white/80 text-convivio-text transition-all duration-300"
               >
