@@ -8,26 +8,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const Hero = () => {
   const navigate = useNavigate();
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const images = [
-    "/lovable-uploads/055c5c29-73b0-46cc-926d-990d6b21dfda.png", // Table with pasta, wine and friends
-    "/lovable-uploads/723a9b50-dca6-43d7-8d22-2c75dd093c26.png", // Candlelit dinner with laughing people
-    "/lovable-uploads/6d4cc8b4-ff52-446a-8334-b81ea4ca410d.png"  // Table setting with wine glasses
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [images.length]);
+  // Selected the most impactful image with people connecting over dinner
+  const heroImage = "/lovable-uploads/723a9b50-dca6-43d7-8d22-2c75dd093c26.png"; // Candlelit dinner with laughing people
 
   const handleLanguageSelect = (language: string) => {
     setShowLanguageModal(false);
@@ -54,16 +42,11 @@ export const Hero = () => {
             </Button>
           </div>
           <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0 overflow-hidden rounded-2xl shadow-2xl">
-            {images.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt="Convivio Dining Experience"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  index === currentImageIndex ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
+            <img
+              src={heroImage}
+              alt="Convivio Dining Experience"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <span className="text-sm font-light italic">
