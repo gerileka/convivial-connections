@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Languages, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -7,11 +8,26 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Hero = () => {
   const navigate = useNavigate();
   const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [
+    "/lovable-uploads/055c5c29-73b0-46cc-926d-990d6b21dfda.png", // Table with pasta, wine and friends
+    "/lovable-uploads/723a9b50-dca6-43d7-8d22-2c75dd093c26.png", // Candlelit dinner with laughing people
+    "/lovable-uploads/6d4cc8b4-ff52-446a-8334-b81ea4ca410d.png"  // Table setting with wine glasses
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const handleLanguageSelect = (language: string) => {
     setShowLanguageModal(false);
@@ -24,11 +40,11 @@ export const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fadeIn text-center md:text-left">
             <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-convivio-text leading-tight">
-              Connect Over Curated Dining Experiences
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-convivio-text leading-tight">
+              Where Strangers Become Friends Over Dinner
             </h1>
             <p className="text-lg text-convivio-muted max-w-lg mx-auto md:mx-0">
-              Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
+              Join intimate gatherings where meaningful conversations flow as freely as the wine, creating connections that last far beyond dessert.
             </p>
             <Button 
               className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
@@ -37,12 +53,23 @@ export const Hero = () => {
               Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
-          <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0">
-            <img
-              src="/lovable-uploads/0e961c5a-8778-4551-8fe0-2c4ca39e765f.png"
-              alt="Convivio Dining Experience"
-              className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
-            />
+          <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0 overflow-hidden rounded-2xl shadow-2xl">
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt="Convivio Dining Experience"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  index === currentImageIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <div className="absolute bottom-6 left-6 right-6 text-white">
+              <span className="text-sm font-light italic">
+                Every meal is a chance to make new connections
+              </span>
+            </div>
           </div>
         </div>
       </div>
