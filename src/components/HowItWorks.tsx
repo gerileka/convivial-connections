@@ -1,5 +1,6 @@
 
 import { ArrowRight } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const steps = [
   {
@@ -47,35 +48,56 @@ export const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-20 bg-convivio-bg/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif font-bold text-convivio-text mb-4">
-            How It Works
-          </h2>
-        </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center mb-12 md:mb-0 relative">
-                {/* Step */}
-                <div className="mb-4 text-convivio-text">
-                  {step.icon}
+        <div className="max-w-5xl mx-auto">
+          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
+          
+          <div className="py-16 space-y-12">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-serif font-bold text-convivio-text mb-4">
+                How It Works
+              </h2>
+              <p className="text-convivio-text/80 max-w-2xl mx-auto">
+                Join our dining community in three simple steps
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <div className="grid gap-12">
+                  {steps.map((step, index) => (
+                    <div key={index} className="flex items-start gap-6 group">
+                      <div className="bg-convivio-bg p-4 rounded-lg border border-convivio-accent/20 text-convivio-text group-hover:border-convivio-accent/40 transition-colors">
+                        {step.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-serif font-bold text-convivio-text mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-convivio-text/80 leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-convivio-text mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-convivio-muted text-center max-w-[200px]">
-                  {step.description}
-                </p>
-                
-                {/* Arrow between steps (only for first two) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 -right-8 transform translate-x-1/2">
-                    <ArrowRight className="h-6 w-6 text-convivio-text/40" />
-                  </div>
-                )}
               </div>
-            ))}
+              
+              <div className="relative order-1 md:order-2">
+                <div className="relative">
+                  <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
+                  <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
+                    <img 
+                      src="/lovable-uploads/c0e0f044-4bd7-4c00-bd60-21570bdf11b9.png" 
+                      alt="A Convivio dinner table with food and wine" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
+          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
         </div>
       </div>
     </section>
