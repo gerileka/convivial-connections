@@ -4,6 +4,8 @@ import { ArrowRight, Languages, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
+import { Separator } from "@/components/ui/separator";
+
 export const Hero = () => {
   const navigate = useNavigate();
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -11,25 +13,40 @@ export const Hero = () => {
     setShowLanguageModal(false);
     navigate(`/form/${language}`);
   };
-  return <section className="min-h-screen flex items-center justify-center bg-convivio-bg pt-16">
+  return (
+    <section className="py-20 bg-convivio-bg min-h-screen flex items-center">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fadeIn text-center md:text-left">
-            <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
+        <div className="max-w-5xl mx-auto">
+          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
+          
+          <div className="flex flex-col md:flex-row items-center gap-12 py-16">
+            <div className="text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1">
+              <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
+              <h1 className="text-4xl font-serif font-bold text-convivio-text">
+                Gather, Connect, Thrive
+              </h1>
+              <p className="text-convivio-text/90 leading-relaxed">
+                Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
+              </p>
+              <Button 
+                className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors" 
+                onClick={() => setShowLanguageModal(true)}
+              >
+                Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
             
-            <p className="text-lg text-convivio-muted max-w-lg mx-auto md:mx-0">
-              Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
-            </p>
-            <Button className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors" onClick={() => setShowLanguageModal(true)}>
-              Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-          <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0">
-            <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
-            <div className="relative overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
-              <img src="/lovable-uploads/79b72843-5f5b-45d1-8a40-6dc422feacab.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
+            <div className="relative md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+              <div className="relative">
+                <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
+                <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
+                  <img src="/lovable-uploads/79b72843-5f5b-45d1-8a40-6dc422feacab.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
+                </div>
+              </div>
             </div>
           </div>
+          
+          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
         </div>
       </div>
 
@@ -57,5 +74,6 @@ export const Hero = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </section>;
+    </section>
+  );
 };
