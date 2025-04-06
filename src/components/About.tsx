@@ -1,9 +1,10 @@
+
 import { Separator } from "@/components/ui/separator";
 export const About = () => {
   return <section id="about" className="py-20 bg-convivio-bg/30">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          
+          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
           
           <div className="flex flex-col md:flex-row items-center gap-12 py-16">
             <div className="text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1">

@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+
+import { ArrowRight, Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -10,14 +11,24 @@ export const Footer = () => {
             <p className="text-convivio-muted">
               Connecting people through curated dining experiences.
             </p>
+            <div className="flex space-x-4 pt-2">
+              <a 
+                href="https://www.instagram.com/convivio__paris" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-convivio-muted hover:text-convivio-accent transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
           <div>
             <h4 className="font-bold text-convivio-text mb-4">Contact</h4>
             <ul className="space-y-2">
               <li className="text-convivio-muted">Paris, France</li>
               <li>
-                <a href="mailto:hello@convivio.com" className="text-convivio-muted hover:text-convivio-accent transition-colors">
-                  hello@convivio.com
+                <a href="mailto:convivio.mailing@gmail.com" className="text-convivio-muted hover:text-convivio-accent transition-colors">
+                  convivio.mailing@gmail.com
                 </a>
               </li>
             </ul>

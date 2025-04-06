@@ -1,5 +1,5 @@
 
-import { ArrowRight } from "lucide-react";
+
 import { Separator } from "@/components/ui/separator";
 
 const steps = [
@@ -61,39 +61,20 @@ export const HowItWorks = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <div className="grid gap-12">
-                  {steps.map((step, index) => (
-                    <div key={index} className="flex items-start gap-6 group">
-                      <div className="bg-convivio-bg p-4 rounded-lg border border-convivio-accent/20 text-convivio-text group-hover:border-convivio-accent/40 transition-colors">
-                        {step.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-serif font-bold text-convivio-text mb-2">
-                          {step.title}
-                        </h3>
-                        <p className="text-convivio-text/80 leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="relative order-1 md:order-2">
-                <div className="relative">
-                  <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
-                  <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
-                    <img 
-                      src="/lovable-uploads/c0e0f044-4bd7-4c00-bd60-21570bdf11b9.png" 
-                      alt="A Convivio dinner table with food and wine" 
-                      className="w-full h-full object-cover"
-                    />
+            <div className="grid md:grid-cols-3 gap-8">
+              {steps.map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="bg-convivio-bg p-4 rounded-lg border border-convivio-accent/20 mb-4 inline-block group-hover:border-convivio-accent/40 transition-colors">
+                    {step.icon}
                   </div>
+                  <h3 className="text-xl font-serif font-bold text-convivio-text mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-convivio-text/80">
+                    {step.description}
+                  </p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
           
