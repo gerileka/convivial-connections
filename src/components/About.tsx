@@ -1,12 +1,9 @@
-
 import { Separator } from "@/components/ui/separator";
-
 export const About = () => {
-  return (
-    <section id="about" className="py-20 bg-convivio-bg/30">
+  return <section id="about" className="py-20 bg-convivio-bg/30">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
+          
           
           <div className="flex flex-col md:flex-row items-center gap-12 py-16">
             <div className="text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1">
@@ -31,11 +28,7 @@ export const About = () => {
               <div className="relative">
                 <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
                 <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
-                  <img 
-                    src="/lovable-uploads/b81388aa-ebc6-4fae-ad59-99e35ebd9789.png" 
-                    alt="A warm Convivio dinner scene" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/lovable-uploads/b81388aa-ebc6-4fae-ad59-99e35ebd9789.png" alt="A warm Convivio dinner scene" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -44,6 +37,5 @@ export const About = () => {
           <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
