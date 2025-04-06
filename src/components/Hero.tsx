@@ -25,8 +25,9 @@ export const Hero = () => {
             </Button>
           </div>
           <div className="relative h-[300px] md:h-[500px] animate-fadeIn mt-8 md:mt-0">
-            <div className="absolute inset-0 overflow-hidden rounded-lg border border-convivio-accent/20">
-              <img src="/lovable-uploads/0e961c5a-8778-4551-8fe0-2c4ca39e765f.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
+            <div className="relative overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
+              <img src="/lovable-uploads/79b72843-5f5b-45d1-8a40-6dc422feacab.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
