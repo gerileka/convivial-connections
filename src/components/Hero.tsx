@@ -14,13 +14,13 @@ export const Hero = () => {
     navigate(`/form/${language}`);
   };
   return (
-    <section className="py-20 bg-convivio-bg min-h-screen flex items-center">
+    <section className="py-20 bg-convivio-bg">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
           
           <div className="flex flex-col md:flex-row items-center gap-12 py-16">
-            <div className="text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1">
+            <div className="text-center md:text-left space-y-6 md:w-1/2">
               <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
               <h1 className="text-4xl font-serif font-bold text-convivio-text">
                 Gather, Connect, Thrive
@@ -36,17 +36,15 @@ export const Hero = () => {
               </Button>
             </div>
             
-            <div className="relative md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+            <div className="relative md:w-1/2 mb-8 md:mb-0 mt-8 md:mt-0">
               <div className="relative">
                 <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
                 <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
-                  <img src="/lovable-uploads/79b72843-5f5b-45d1-8a40-6dc422feacab.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
+                  <img src="/lovable-uploads/016f5401-6ff5-4089-8751-d1c8fb26f815.png" alt="Convivio Dining Experience" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
           </div>
-          
-          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
         </div>
       </div>
 
