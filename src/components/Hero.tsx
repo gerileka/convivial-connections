@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Languages, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -14,19 +13,18 @@ export const Hero = () => {
     navigate(`/form/${language}`);
   };
   return (
-    <section className="py-20 bg-convivio-bg min-h-screen flex items-center">
+    <section className="pt-20 pb-10 bg-convivio-bg min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <Separator className="w-24 h-[2px] mx-auto bg-convivio-accent/40" />
           
           <div className="flex flex-col md:flex-row items-center gap-12 py-16">
-            <div className="text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1">
+            <div className="text-center md:text-left space-y-6 md:w-1/2 order-1 md:order-1">
               <span className="text-convivio-accent font-medium">Welcome to Convivio</span>
               <h1 className="text-4xl font-serif font-bold text-convivio-text">
-                Gather, Connect, Thrive
+                Where Strangers Become Friends Over Exceptional Meals
               </h1>
               <p className="text-convivio-text/90 leading-relaxed">
-                Join intimate dinner parties where strangers become friends over exceptional food and meaningful conversations.
+                Experience intimate dinner gatherings designed to foster genuine connections through shared culinary experiences and heartfelt conversations.
               </p>
               <Button 
                 className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors" 
@@ -36,7 +34,7 @@ export const Hero = () => {
               </Button>
             </div>
             
-            <div className="relative md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+            <div className="relative md:w-1/2 order-2 md:order-2 mb-8 md:mb-0">
               <div className="relative">
                 <div className="absolute inset-0 border-2 border-convivio-accent/20 rounded-lg transform translate-x-3 translate-y-3"></div>
                 <div className="overflow-hidden rounded-lg border border-convivio-accent/30 shadow-md">
