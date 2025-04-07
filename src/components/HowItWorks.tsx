@@ -1,5 +1,4 @@
 
-
 import { Separator } from "@/components/ui/separator";
 
 const steps = [
@@ -14,8 +13,8 @@ const steps = [
         </svg>
       </div>
     ),
-    title: "Sign up",
-    description: "Answer a few simple questions",
+    title: "You answer a few fun questions",
+    description: "Nothing serious - just the kind of stuff you'd share over aperitivo. Think: What's your karaoke song? What's your relationship with coriander? That sort of thing.",
   },
   {
     icon: (
@@ -27,8 +26,8 @@ const steps = [
         </svg>
       </div>
     ),
-    title: "Get matched",
-    description: "We pair you with like-minded guests",
+    title: "We work our matchmaking magic",
+    description: "Behind the scenes, we pair you with a small group of strangers whose answers vibe with yours (or clash in just the right way). A mix of shared tastes and delightful differences.",
   },
   {
     icon: (
@@ -39,8 +38,8 @@ const steps = [
         </svg>
       </div>
     ),
-    title: "Enjoy",
-    description: "Meet, dine, and connect!",
+    title: "You show up, we handle the rest",
+    description: "We pick the spot, set the table, and break the ice. You just bring yourself and an appetite for food and conversation.",
   },
 ];
 
@@ -56,8 +55,12 @@ export const HowItWorks = () => {
               <h2 className="text-4xl font-serif font-bold text-convivio-text mb-4">
                 How It Works
               </h2>
-              <p className="text-convivio-text/80 max-w-2xl mx-auto">
-                Join our dining community in three simple steps
+              <p className="text-convivio-text/80 max-w-2xl mx-auto italic font-medium">
+                A little magic (and a little matchmaking)
+              </p>
+              <p className="text-convivio-text/80 max-w-2xl mx-auto mt-4">
+                We bring strangers together around good food and better conversation.
+                Here's how it works:
               </p>
             </div>
             
@@ -68,7 +71,7 @@ export const HowItWorks = () => {
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-serif font-bold text-convivio-text mb-2">
-                    {step.title}
+                    {index + 1}. {step.title}
                   </h3>
                   <p className="text-convivio-text/80">
                     {step.description}
