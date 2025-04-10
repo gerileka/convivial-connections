@@ -20,9 +20,9 @@ export default {
     },
     extend: {
       colors: {
-        "convivio-bg": "#f4f2e5",
-        "convivio-text": "#3d615a",
-        "convivio-accent": "#8B4513",
+        "convivio-bg": "rgb(var(--convivio-bg) / <alpha-value>)",
+        "convivio-text": "rgb(var(--convivio-text) / <alpha-value>)",
+        "convivio-accent": "rgb(var(--convivio-accent) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -63,8 +63,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        serif: ["var(--font-playfair)"],
+        sans: ["var(--font-inter)", ...fontFamily.sans],
+        serif: ["var(--font-cardo)", ...fontFamily.serif],
       },
       keyframes: {
         "accordion-down": {
@@ -75,17 +75,31 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
+        "fadeIn": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        fadeIn: 'fadeIn 1s ease-in',
+        "fadeIn": "fadeIn 1s ease-in forwards"
+      },
+      spacing: {
+        'header': '4rem', // Standard header height
+        'section': '6rem', // Standard section padding
+      },
+      maxWidth: {
+        'content': '65ch', // Optimal reading width
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-fade': 'linear-gradient(to right, var(--convivio-accent), transparent)',
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animate'),
+  ],
 } satisfies Config

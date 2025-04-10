@@ -2,7 +2,7 @@ import { ArrowRight, Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-convivio-text pt-12 border-t border-[#8B4513]/20">
+    <footer className="bg-convivio-text pt-12 border-t border-convivio-accent/20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
@@ -15,7 +15,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/convivio__paris" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-[#8B4513] transition-colors inline-flex items-center"
+                className="text-white/80 hover:text-convivio-accent transition-colors inline-flex items-center"
                 aria-label="Follow Convivio on Instagram"
               >
                 <Instagram className="h-5 w-5 mr-2" />
@@ -28,7 +28,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li className="text-white/80">Paris, France</li>
               <li>
-                <a href="mailto:convivio.mailing@gmail.com" className="text-white/80 hover:text-[#8B4513] transition-colors">
+                <a href="mailto:convivio.mailing@gmail.com" className="text-white/80 hover:text-convivio-accent transition-colors">
                   convivio.mailing@gmail.com
                 </a>
               </li>
@@ -39,12 +39,12 @@ export const Footer = () => {
             <p className="text-white/80 mb-4">
               Stay updated with our latest events and news.
             </p>
-            <button className="text-white hover:text-[#8B4513] transition-colors inline-flex items-center group">
+            <button className="text-white hover:text-convivio-accent transition-colors inline-flex items-center group">
               Subscribe <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
-        <div className="border-t border-[#8B4513]/20 mt-12 pt-8 text-center text-white/70">
+        <div className="border-t border-convivio-accent/20 mt-12 pt-8 text-center text-white/70">
           <p>&copy; {new Date().getFullYear()} Convivio. All rights reserved.</p>
         </div>
       </div>
