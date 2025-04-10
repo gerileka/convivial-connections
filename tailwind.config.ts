@@ -20,12 +20,9 @@ export default {
     },
     extend: {
       colors: {
-        convivio: {
-          bg: "#f4f2e5",
-          text: "#3d615a",
-          accent: "#e6a95f",
-          muted: "#8a817c"
-        },
+        "convivio-bg": "#f4f2e5",
+        "convivio-text": "#3d615a",
+        "convivio-accent": "#8B4513",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -66,8 +63,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Cardo", ...fontFamily.sans],
-        serif: ["Cardo", ...fontFamily.serif],
+        sans: ["var(--font-inter)"],
+        serif: ["var(--font-playfair)"],
       },
       keyframes: {
         "accordion-down": {
