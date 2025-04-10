@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ArrowRight, Languages, Menu, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,6 +46,9 @@ export const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
+              <a href="#about" className="text-convivio-text hover:text-convivio-accent transition-colors">
+                About
+              </a>
               <a href="#how-it-works" className="text-convivio-text hover:text-convivio-accent transition-colors">
                 How it Works
               </a>
@@ -54,7 +56,7 @@ export const Navbar = () => {
                 className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors"
                 onClick={() => setShowLanguageModal(true)}
               >
-                Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                Be part of the next story <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
@@ -67,6 +69,9 @@ export const Navbar = () => {
               </SheetTrigger>
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
+                  <a href="#about" className="text-convivio-text hover:text-convivio-accent transition-colors text-lg">
+                    About
+                  </a>
                   <a href="#how-it-works" className="text-convivio-text hover:text-convivio-accent transition-colors text-lg">
                     How it Works
                   </a>
@@ -74,7 +79,7 @@ export const Navbar = () => {
                     className="bg-convivio-text text-white hover:bg-convivio-accent transition-colors w-full"
                     onClick={() => setShowLanguageModal(true)}
                   >
-                    Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                    Be part of the next story <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </SheetContent>
@@ -84,40 +89,33 @@ export const Navbar = () => {
       </nav>
 
       <Dialog open={showLanguageModal} onOpenChange={setShowLanguageModal}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-convivio-bg border border-convivio-accent/20">
           <DialogHeader>
-            <DialogTitle className="text-center font-serif text-2xl text-convivio-text">
+            <DialogTitle className="text-center font-serif text-2xl text-convivio-text mb-2">
               Choose Your Language
             </DialogTitle>
-            <DialogDescription className="text-center text-convivio-text/80">
-              Select your preferred language for the application form.
-            </DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4 py-4">
+          <div className="grid gap-3 py-4">
             <Button
               variant="outline"
-              className="h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300"
+              className="h-12 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20"
               onClick={() => handleLanguageSelect("fr")}
             >
               Français
-              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
             <Button
               variant="outline"
-              className="h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300"
+              className="h-12 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20"
               onClick={() => handleLanguageSelect("en")}
             >
               English
-              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
             <Button
               variant="outline"
-              className="h-14 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20 hover:border-convivio-accent transition-all duration-300 flex items-center gap-2"
+              className="h-12 text-lg font-serif hover:bg-convivio-accent/10 hover:text-convivio-accent border-convivio-text/20"
               onClick={() => handleLanguageSelect("both")}
             >
-              <Languages className="h-5 w-5" />
-              I'm bilingual, I can go either way!
-              <Sparkles className="ml-auto h-5 w-5 text-convivio-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+              Franglais (Both Languages)
             </Button>
           </div>
         </DialogContent>
