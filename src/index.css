@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,16 @@
 
 @layer base {
   :root {
+    /* Font families */
+    --font-cardo: 'Cardo', serif;
+    --font-inter: 'Inter', sans-serif;
+
+    /* Convivio Theme Colors */
+    --convivio-bg: 244 242 229;    /* #f4f2e5 */
+    --convivio-text: 61 97 90;     /* #3d615a */
+    --convivio-accent: 139 69 19;  /* #8B4513 */
+
+    /* shadcn/ui Theme Colors */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -34,6 +44,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   html {
@@ -41,6 +52,29 @@
   }
 }
 
-.glass-card {
-  @apply backdrop-blur-md bg-white/30 border border-white/20;
+/* Component styles */
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/30 border border-white/20;
+  }
+
+  .heading-serif {
+    @apply font-serif text-convivio-text leading-tight;
+  }
+
+  .text-body {
+    @apply text-convivio-text/90 leading-relaxed;
+  }
+
+  .hover-accent {
+    @apply hover:text-convivio-accent transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply bg-convivio-text text-white hover:bg-convivio-accent transition-colors duration-200;
+  }
+
+  .button-outline {
+    @apply border-2 border-convivio-text/20 hover:border-convivio-text bg-white/50 hover:bg-white/80 text-convivio-text transition-all duration-300;
+  }
 }
